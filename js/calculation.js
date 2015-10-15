@@ -1,3 +1,35 @@
+document.addEventListener('DOMContentLoaded', function() {
+    'use strict';
+
+    var equalButton = document.getElementById('equals-button');
+    equalButton.addEventListener('click', function() {
+
+        var dropdown = document.getElementById('opr');
+        var opr = dropdown.selected;
+        console.log(opr);
+        var errorBox = document.getElementById('error-message');
+        var value1 = parseFloat(document.getElementById('value-1').value);
+        var value2 = parseFloat(document.getElementById('value-2').value);
+        if (!isNaN(value1) && !isNaN(value2)) {
+            console.log(value1);
+            console.log(value2);
+            var resultBox = document.getElementById('result');
+            resultBox.textContent = '';
+            errorBox.style.display = 'none';
+            var result = value1 + value2;
+
+            resultBox.textContent = result;
+        } else {
+
+            errorBox.textContent = 'Please enter a number';
+            errorBox.style.display = 'block';
+        }
+
+    } )
+});
+
+
+
 /*
     script for the calculation.html page
 
